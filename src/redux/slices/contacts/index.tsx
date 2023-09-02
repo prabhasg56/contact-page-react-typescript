@@ -7,6 +7,7 @@ export type Contact = {
   firstName: string;
   lastName: string;
   status: boolean;
+  id: number;
 };
 
 // Define the initial state using that type
@@ -20,10 +21,20 @@ const contactInfoSlice = createSlice({
   initialState: initialContactInfo,
   reducers: {
     addContactInfo: (state, action) => {
-      state.contacts = [state.contacts, action.payload];
+      state.contacts = [...state.contacts, action.payload];
     },
+
+    deleteContact: (state, action) => {
+        const updatedContacts = state.contacts.filter((contact) => contact.id !== action.payload);
+
+        state.contacts = updatedContacts;
+    },
+
+    updateContactInfo: (state, action) => {
+        
+    }
   },
 });
 
-export const { addContactInfo } = contactInfoSlice.actions;
+export const { addContactInfo, deleteContact, updateContactInfo } = contactInfoSlice.actions;
 export default contactInfoSlice.reducer;
