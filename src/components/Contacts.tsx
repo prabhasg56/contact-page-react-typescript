@@ -39,6 +39,10 @@ const Contacts = () => {
         {/* Contact form */}
         {showForm && (
           <form className="w-full max-w-sm bg-green-200 p-4">
+            <h1 className="flex justify-center mb-3 font-bold">
+              Create contact form
+            </h1>
+
             <div className="md:flex md:items-center mb-4">
               <div className="md:w-1/3">
                 <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">

@@ -31,7 +31,10 @@ const contactInfoSlice = createSlice({
     },
 
     updateContactInfo: (state, action) => {
-        
+        //finding conatct index from the contacts list which we want to update
+        const updateContactIndex = state.contacts.findIndex((contact) => contact.id == action.payload.id);
+        //updating the contacts list
+        state.contacts[updateContactIndex] = action.payload;
     }
   },
 });

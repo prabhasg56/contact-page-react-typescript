@@ -2,12 +2,11 @@ import React from "react";
 
 import { useAppSelector, useAppDispatch } from "../redux/hooks";
 import { deleteContact } from "../redux/slices/contacts";
+import { NavLink } from "react-router-dom";
 
 const ContactList = () => {
   const contactInfo = useAppSelector((state) => state.contactInfo);
   const dispatch = useAppDispatch();
-
-  const updateContactHandler = () => {};
 
   const deleteContactHandler = (id: number) => {
     dispatch(deleteContact(id));
@@ -40,12 +39,13 @@ const ContactList = () => {
                 </div>
                 <div className="md:flex md:items-center mt-2">
                   <div className="flex flex-row md:w-2/3 ">
-                    <button
+                    <NavLink
                       className="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-1 px-3 rounded mr-2"
                       type="button"
+                      to={`/update-contact/${contact.id}`}
                     >
                       Update
-                    </button>
+                    </NavLink>
 
                     <button
                       className="shadow bg-red-500 hover:bg-red-400 focus:shadow-outline focus:outline-none text-white font-bold py-1 px-3 rounded"
