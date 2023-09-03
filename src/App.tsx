@@ -8,7 +8,7 @@ import UpdateContact from "./components/UpdateContact";
 function App() {
   return (
     <>
-      <Sidebar />
+      <Sidebar/>
       <Routes>
         <Route path="/contacts" element={<ContactPage />} />
         <Route path="/update-contact/:id" element={<UpdateContact />} />

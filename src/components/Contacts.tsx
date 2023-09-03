@@ -29,7 +29,7 @@ const Contacts = () => {
       <div className="flex flex-col items-center mt-2 ">
         {!showForm && (
           <button
-            className="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-full"
+            className="shadow bg-sky-500 hover:bg-sky-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-full"
             onClick={() => setShowForm(!showForm)}
           >
             Create Contact
@@ -38,7 +38,7 @@ const Contacts = () => {
 
         {/* Contact form */}
         {showForm && (
-          <form className="w-full max-w-sm bg-green-200 p-4">
+          <form className="w-full max-w-sm bg-sky-200 p-4">
             <h1 className="flex justify-center mb-3 font-bold">
               Create contact form
             </h1>
@@ -51,7 +51,7 @@ const Contacts = () => {
               </div>
               <div className="md:w-2/3">
                 <input
-                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-500"
                   type="text"
                   value={firstName}
                   placeholder="Prabhas"
@@ -68,7 +68,7 @@ const Contacts = () => {
               </div>
               <div className="md:w-2/3">
                 <input
-                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-500"
                   type="text"
                   value={lastName}
                   placeholder="kumar"
@@ -114,7 +114,7 @@ const Contacts = () => {
               <div className="md:w-1/3"></div>
               <div className="md:w-2/3">
                 <button
-                  className="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-1 px-3 rounded mr-2"
+                  className="shadow bg-sky-500 hover:bg-sky-400 focus:shadow-outline focus:outline-none text-white font-bold py-1 px-3 rounded mr-2"
                   type="button"
                   onClick={(e) => handleContactForm(e)}
                 >

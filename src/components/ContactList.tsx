@@ -20,7 +20,7 @@ const ContactList = () => {
         contactInfo.contacts.map((contact, key) => {
           return (
             <div className="flex flex-col" key={contact.id}>
-              <div className="max-w-sm p-4 mt-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-green-200 dark:border-gray-700">
+              <div className="max-w-sm p-4 mt-3 bg-white rounded-lg drop-shadow dark:bg-sky-200 dark:border-gray-700">
                 <div className="flex flex-col">
                   <div>
                     <span className="font-bold">First Name:</span>
@@ -40,7 +40,7 @@ const ContactList = () => {
                 <div className="md:flex md:items-center mt-2">
                   <div className="flex flex-row md:w-2/3 ">
                     <NavLink
-                      className="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-1 px-3 rounded mr-2"
+                      className="shadow bg-sky-500 hover:bg-sky-400 focus:shadow-outline focus:outline-none text-white font-bold py-1 px-3 rounded mr-2"
                       type="button"
                       to={`/update-contact/${contact.id}`}
                     >

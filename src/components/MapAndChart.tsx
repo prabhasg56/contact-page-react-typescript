@@ -1,16 +1,16 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-import { useAppDispatch } from "../redux/hooks";
 import CasesFluctuations from "./CasesFluctuations";
+import CountriesMapWithCovidCases from "./CountriesMapWithCovidCases";
 
 const MapAndChart = () => {
-  const dispatch = useAppDispatch();
   const uniqueDates: string[] = [];
   const casesArray: number[] = [];
   const deathArray: number[] = [];
   const recoveredArray: number[] = [];
 
+  //fetching overall covid cases data
   const covidQuery = useQuery({
     queryKey: ["covid"],
     queryFn: async () => {
@@ -23,8 +23,12 @@ const MapAndChart = () => {
     },
   });
 
-  if (covidQuery.isLoading) return <h1>Loading....</h1>;
-  if (covidQuery.isError) return <h1>Error loading data!!!</h1>;
+  if (covidQuery.isLoading)
+    return <h1 className="flex flex-col items-center">Loading....</h1>;
+  if (covidQuery.isError)
+    return (
+      <h1 className="flex flex-col items-center">Error loading data!!!</h1>
+    );
 
   const dates = Object.keys(covidQuery.data.cases);
   const result: Record<string, Record<string, any>>[] = [];
@@ -48,8 +52,14 @@ const MapAndChart = () => {
   });
 
   return (
-    <div className="flex flex-col items-center mt-2 ">
-      <CasesFluctuations uniqueDates={uniqueDates} cases={casesArray} deaths={deathArray} recovered={recoveredArray}/>
+    <div className="flex flex-col absolute mt-2  flex-wrap right-32">
+      <CasesFluctuations
+        uniqueDates={uniqueDates}
+        cases={casesArray}
+        deaths={deathArray}
+        recovered={recoveredArray}
+      />
+      <CountriesMapWithCovidCases />
     </div>
   );
 };
