@@ -3,18 +3,21 @@ import { useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
+  let title: string = "Home";
+
+  if (location.pathname === "/contacts") {
+    title = "Contacts List";
+  } else if (location.pathname === "/map_chart") {
+    title = "Worldwide COVID Cases";
+  }
 
   return (
     <div className="bg-gray-100 font-sans leading-normal tracking-normal">
       <div className="flex md:flex-row-reverse flex-wrap">
         {/* Main Content */}
         <main className="w-full md:w-5/6 bg-gray-100">
-          <div className="container bg-sky-700 pt-10 px-6 font-bold text-xl flex justify-center ">
-            <div>{`${
-              location.pathname === "/contacts"
-                ? "Contacts List"
-                : "Worldwide COVID Cases"
-            }`}</div>
+          <div className="flex justify-center items-center bg-sky-700 pt-10 px-6 font-bold text-xl ">
+            <div>{title}</div>
           </div>
         </main>
 
