@@ -52,7 +52,7 @@ const MapAndChart = () => {
   });
 
   return (
-    <div className="flex flex-col absolute mt-2  flex-wrap right-32">
+    <div className="flex flex-col xl:ml-60 sm:z-10 xl:w-3/4 md:ml-12 sm:ml-0 p-2 sm:overflow-scroll mt-4">
       <CasesFluctuations
         uniqueDates={uniqueDates}
         cases={casesArray}

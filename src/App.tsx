@@ -7,14 +7,14 @@ import UpdateContact from "./components/UpdateContact";
 
 function App() {
   return (
-    <>
+    <div>
       <Sidebar/>
       <Routes>
         <Route path="/contacts" element={<ContactPage />} />
         <Route path="/update-contact/:id" element={<UpdateContact />} />
         <Route path="/map_chart" element={<MapAndChart />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

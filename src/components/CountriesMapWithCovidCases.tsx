@@ -34,12 +34,12 @@ const CountriesMapWithCovidCases = () => {
     );
 
   const mapStyle = {
-    height: "500px",
+    height: "28rem",
     width: "100%",
   };
 
   return (
-    <div className="container-fluid mt-3 mb-3  p-4">
+    <div className="container-fluid mt-3 mb-3 z-10  xl:p-4 xl:ml-12 md:ml-40">
       <h1 className="flex justify-center m-2 font-bold border-b-2"> Country wise COVID Cases</h1>
       <MapContainer center={[20, 0]} zoom={2} style={mapStyle}>
         <TileLayer

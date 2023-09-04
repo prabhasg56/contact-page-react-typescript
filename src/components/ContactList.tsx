@@ -12,15 +12,13 @@ const ContactList = () => {
     dispatch(deleteContact(id));
   };
 
-  console.log(contactInfo.contacts);
   return (
-    <div className="flex flex-col items-center mt-4">
-      <h2 className="font-bold">CONTACTS LISTS</h2>
+    <div className="flex flex-wrap  xl:ml-60 md:ml-24 ml-12 p-2  mt-4">
       {contactInfo.contacts.length ? (
         contactInfo.contacts.map((contact, key) => {
           return (
-            <div className="flex flex-col" key={contact.id}>
-              <div className="max-w-sm p-4 mt-3 bg-white rounded-lg drop-shadow dark:bg-sky-200 dark:border-gray-700">
+            <div className="flex row" key={contact.id}>
+              <div className="max-w-sm p-4 mt-3 ml-4 bg-white rounded-lg drop-shadow dark:bg-sky-200 dark:border-gray-700">
                 <div className="flex flex-col">
                   <div>
                     <span className="font-bold">First Name:</span>
@@ -61,7 +59,7 @@ const ContactList = () => {
           );
         })
       ) : (
-        <div className="flex flex-col font-bold text-red-800 m-3 p-3 border-2 border-black">
+        <div className="flex flex-col font-bold text-red-800 m-3 p-3 border-2 border-black ">
           <span>No Contact Found </span> <span>Please add contact from</span>
           <span> Create Contact Button!</span>
         </div>

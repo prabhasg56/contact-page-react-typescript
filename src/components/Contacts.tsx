@@ -15,6 +15,10 @@ const Contacts = () => {
   const handleContactForm = (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!firstName) {
+      alert("Please enter the contact detail!");
+      return;
+    }
     const id = Math.floor(Math.random() * (50 - 0 + 1)) + 0;
 
     dispatch(addContactInfo({ firstName, lastName, status, id }));
@@ -54,7 +58,7 @@ const Contacts = () => {
                   className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-500"
                   type="text"
                   value={firstName}
-                  placeholder="Prabhas"
+                  placeholder="Enter your first name"
                   onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
@@ -71,7 +75,7 @@ const Contacts = () => {
                   className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-sky-500"
                   type="text"
                   value={lastName}
-                  placeholder="kumar"
+                  placeholder="Enter your last name"
                   onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
